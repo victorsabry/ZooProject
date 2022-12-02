@@ -1,0 +1,20 @@
+CREATE TABLE [dbo].[Zoo] (
+    [Zoo_id] INT            NOT NULL,
+    [Name]     VARCHAR (30) NOT NULL,
+    [Address]  VARCHAR (50) NOT NULL,
+    PRIMARY KEY CLUSTERED ([Zoo_id] ASC)
+);
+
+CREATE TABLE [dbo].[Animal] (
+    [Animal_id] INT             NOT NULL,
+    [Name]      NVARCHAR (50)   NOT NULL,
+    PRIMARY KEY CLUSTERED ([Animal_id] ASC)
+);
+
+CREATE TABLE [dbo].[ZooAnimals] (
+    [Zoo_id]    INT    NOT NULL,
+    [Animal_id] INT    NOT NULL,
+    CONSTRAINT [PK_Table] PRIMARY KEY CLUSTERED ([Animal_id] ASC, [Zoo_id] ASC),
+    FOREIGN KEY ([Zoo_id]) REFERENCES [dbo].[Zoo] ([Zoo_id]) ON DELETE CASCADE,
+    FOREIGN KEY ([Animal_id]) REFERENCES [dbo].[Animal] ([Animal_id]) ON DELETE CASCADE
+);
