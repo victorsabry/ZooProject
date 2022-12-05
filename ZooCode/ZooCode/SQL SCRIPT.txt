@@ -1,5 +1,5 @@
 CREATE TABLE [dbo].[Zoo] (
-    [Zoo_id] INT            NOT NULL,
+    [Zoo_id]   INT  	    NOT NULL,
     [Name]     VARCHAR (30) NOT NULL,
     [Address]  VARCHAR (50) NOT NULL,
     PRIMARY KEY CLUSTERED ([Zoo_id] ASC)
@@ -18,3 +18,42 @@ CREATE TABLE [dbo].[ZooAnimals] (
     FOREIGN KEY ([Zoo_id]) REFERENCES [dbo].[Zoo] ([Zoo_id]) ON DELETE CASCADE,
     FOREIGN KEY ([Animal_id]) REFERENCES [dbo].[Animal] ([Animal_id]) ON DELETE CASCADE
 );
+
+INSERT INTO Zoo VALUES(1,'Amager Zoo','Amagergade');
+INSERT INTO Zoo VALUES(2,'Greve Fiskeland','Greve strandvej');
+INSERT INTO Zoo VALUES(3,'Aalborg Zoo','Aalborg Torv');
+INSERT INTO Zoo VALUES(4,'Roskilde Fuglehus','Algade');
+INSERT INTO Zoo VALUES(5,'Odense Zoo','Kerteminde park');
+INSERT INTO Animal VALUES(1,'Tiger');
+INSERT INTO Animal VALUES(2,'Elephant');
+INSERT INTO Animal VALUES(3,'Eagle');
+INSERT INTO Animal VALUES(4,'Shark');
+INSERT INTO Animal VALUES(5,'Dolphin');
+INSERT INTO Animal VALUES(6,'Zebra');
+INSERT INTO Animal VALUES(7,'Snake');
+INSERT INTO Animal VALUES(8,'Panda');
+INSERT INTO Animal VALUES(9,'Vulture');
+INSERT INTO Animal VALUES(10,'Monkey');
+INSERT INTO Animal VALUES(11,'Seal');
+INSERT INTO Animal VALUES(12,'Turtle');
+INSERT INTO Animal VALUES(13,'Varan');
+INSERT INTO ZooAnimals VALUES(1,1);
+INSERT INTO ZooAnimals VALUES(1,2);
+INSERT INTO ZooAnimals VALUES(1,6);
+INSERT INTO ZooAnimals VALUES(1,8);
+INSERT INTO ZooAnimals VALUES(1,10);
+INSERT INTO ZooAnimals VALUES(2,4);
+INSERT INTO ZooAnimals VALUES(2,5);
+INSERT INTO ZooAnimals VALUES(2,11);
+INSERT INTO ZooAnimals VALUES(3,7);
+INSERT INTO ZooAnimals VALUES(3,12);
+INSERT INTO ZooAnimals VALUES(3,13);
+INSERT INTO ZooAnimals VALUES(4,3);
+INSERT INTO ZooAnimals VALUES(4,7);
+INSERT INTO ZooAnimals VALUES(4,9);
+INSERT INTO ZooAnimals VALUES(5,3);
+INSERT INTO ZooAnimals VALUES(5,7);
+INSERT INTO ZooAnimals VALUES(5,9);
+INSERT INTO ZooAnimals VALUES(5,10);
+INSERT INTO ZooAnimals VALUES(5,12);
+INSERT INTO ZooAnimals VALUES(5,13);
